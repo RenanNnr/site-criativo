@@ -1,70 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colégio Estadual Prof. Edithe</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, rgb(0, 38, 255), black);
+            color: white;
+            font-size: 18px; /* Aumento do tamanho da fonte */
+        }
 
-<!DOCTYPEhtml >
-< html  lang =" pt-BR " >
-< cabeça >
-    < meta  charset =" UTF-8 " >
-    < meta  name =" viewport " content =" largura = largura do dispositivo, escala inicial = 1,0 " >
-    < title > Colégio Estadual Prof. Edithe </ title >
-    < link  rel =" folha de estilo " href =" estilos.css " >
-</ cabeça >
-< corpo >
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    < div  class =" contêiner " >
-        < cabeçalho >
-            < h1 > Colégio Estadual Prof. Edithe </ h1 >
+        header {
+            text-align: center; /* Alinhamento do texto para o centro */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between; /* Espaçamento entre o título e a imagem */
+            align-items: center; /* Centralização vertical do conteúdo */
+        }
+
+        header h1 {
+            margin-right: 20px; /* Margem à direita do título */
+        }
+
+        header img {
+            width: 500px; /* Aumento significativo do tamanho da imagem */
+            height: auto; /* Altura automática */
+            margin-top: 20px; /* Espaçamento para baixo */
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #61a7f1; /* Cor azul mais claro */
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+            text-align: left; /* Alinhamento do texto para a esquerda */
+            border-bottom: 1px solid #ccc; /* Linha divisória */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Colégio Estadual Prof. Edithe</h1>
             <!-- Imagem adicionada ao lado superior direito do título -->
-            < img  src =" c:\Users\gustavo\Pictures\download.jpeg.jpg " alt =" Logo do Colégio " width =" 500 " >
-        </ cabeçalho >
+            <img src="data:image/jpeg;base64,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" alt="Logo do Colégio" width="500">
+        </header>
 
-        < navegação >
-            <ul>​​
-                < li > < a  href =" #ensino-fundamental " > Ensino Fundamental </ a > </ li >
-                < li > < a  href =" #ensino-medio " > Ensino Médio </ a > </ li >
-                < li > < a  href =" #contato " > Contato </ a > </ li >
-                < li > < a  href =" #localizacao " > Localização </ a > </ li >
-            </ul>​​
-        </nav>​​
+        <nav>
+            <ul>
+                <li><a href="#ensino-fundamental">Ensino Fundamental</a></li>
+                <li><a href="#ensino-medio">Ensino Médio</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+            </ul>
+        </nav>
 
-        < seção  id =" ensino-fundamental " >
-            < h2 > Ensino Fundamental </ h2 >
-            <ul>​​
-                < li > Língua/Literatura Portuguesa </ li >
-                < li > Educação Física </ li >
-                < li > Artes </ li >
-                < li > Língua/Literatura Estrangeira - Inglês </ li >
-                < li > Matemática </ li >
-                < li > Ciências </ li >
-                < li > História </ li >
-                < li > Geografia </ li >
-                < li > Ensino Religioso </ li >
-            </ul>​​
-        </ seção >
+        <section id="ensino-fundamental">
+            <h2>Ensino Fundamental</h2>
+            <ul>
+                <li>Língua/Literatura Portuguesa</li>
+                <li>Educação Física</li>
+                <li>Artes</li>
+                <li>Língua/Literatura Estrangeira - Inglês</li>
+                <li>Matemática</li>
+                <li>Ciências</li>
+                <li>História</li>
+                <li>Geografia</li>
+                <li>Ensino Religioso</li>
+            </ul>
+        </section>
 
-        < seção  id =" ensino-medio " >
-            < h2 > Ensino Médio </ h2 >
-            < p > Itinerários: </ p >
-            <ul>​​
-                < li > Ciências da Humanas (Linguagens) </ li >
-                < li > Ciências da Natureza (Matemática) </ li >
-            </ul>​​
-        </ seção >
+        <section id="ensino-medio">
+            <h2>Ensino Médio</h2>
+            <p>Itinerários:</p>
+            <ul>
+                <li>Ciências da Humanas (Linguagens)</li>
+                <li>Ciências da Natureza (Matemática)</li>
+            </ul>
+        </section>
 
-        < seção  id =" contato " >
-            <h2> Contato </h2>​​​​
-            < p > E-mail: clgedithe@seed.pr.gov.br </ p >
-            < p > Telefone: (41) 3649-2468 </ p >
-        </ seção >
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Email: clgedithe@seed.pr.gov.br</p>
+            <p>Telefone: (41) 3649-2468</p>
+        </section>
 
-        < seção  id =" localização " >
-            < h2 > Localização </ h2 >
-            < p > Endereço: Rua Mato Grosso, 9255 </ p >
-            < p > Cidade: Campo Largo - Paraná </ p >
-        </ seção >
+        <section id="localizacao">
+            <h2>Localização</h2>
+            <p>Endereço: Rua Mato Grosso, 9255</p>
+            <p>Cidade: Campo Largo - Paraná</p>
+        </section>
 
-        < rodapé >
-            < p > © 2024 Colégio Estadual Prof. Edithe. Todos os direitos reservados. </ p >
-        </ rodapé >
-    </div>​​
+        <footer>
+            <p>&copy; 2024 Colégio Estadual Prof. Edithe. Todos os direitos reservados.</p>
+        </footer>
+    </div>
 
-</ corpo >
-  </html>
+</body>
+</html>
